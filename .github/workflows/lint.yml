@@ -3,7 +3,7 @@ name: Lint
 on: [push, pull_request]
 
 jobs:
-  SwiftLint UIC:
+  UICSwiftLint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -11,7 +11,7 @@ jobs:
         uses: norio-nomura/action-swiftlint@3.0.1
         with:
           args: --strict
-  SwiftLint Manager:
+  ManagerSwiftLint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
