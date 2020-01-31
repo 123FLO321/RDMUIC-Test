@@ -24,7 +24,7 @@ jobs:
     - uses: actions/cache@v1
       with:
         path: Manager/.build
-        key: ${{ runner.os }}-debug-spm-${{ hashFiles('Package.resolved') }}
+        key: ${{ runner.os }}-debug-spm-${{ hashFiles('Manager/Package.resolved') }}
     - name: Build
       working-directory: Manager
       run: swift build -v -c debug
@@ -41,7 +41,7 @@ jobs:
     - uses: actions/cache@v1
       with:
         path:  Manager/.build
-        key: ${{ runner.os }}-release-spm-${{ hashFiles('Package.resolved') }}
+        key: ${{ runner.os }}-release-spm-${{ hashFiles('Manager/Package.resolved') }}
     - name: Build
       working-directory: Manager
       run: swift build -v -c release
