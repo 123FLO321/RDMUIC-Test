@@ -10,6 +10,8 @@
 import Foundation
 import XCTest
 
+lolo
+
 extension UIImage {
     func getPixelColor(pos: CGPoint) -> UIColor {
 
