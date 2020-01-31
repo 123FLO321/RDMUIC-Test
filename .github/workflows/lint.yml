@@ -15,8 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: cd Manager
       - name: GitHub Action for SwiftLint with --strict
         uses: norio-nomura/action-swiftlint@3.0.1
         with:
           args: --strict
+        env:
+          PROJECT_PATH: ./Manager
