@@ -19,24 +19,29 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Resolve
+      working-directory: Manager
       run: swift package resolve
     - uses: actions/cache@v1
       with:
-        path: .build
+        path: Manager/.build
         key: ${{ runner.os }}-debug-spm-${{ hashFiles('Package.resolved') }}
     - name: Build
+      working-directory: Manager
       run: swift build -v -c debug
     - name: Test
+      working-directory: Manager
       run: swift test -v -c debug
   ManagerBuildRelease:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v1
     - name: Resolve
+      working-directory: Manager
       run: swift package resolve
     - uses: actions/cache@v1
       with:
-        path: .build
+        path:  Manager/.build
         key: ${{ runner.os }}-release-spm-${{ hashFiles('Package.resolved') }}
     - name: Build
+      working-directory: Manager
       run: swift build -v -c release
